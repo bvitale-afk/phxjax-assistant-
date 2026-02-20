@@ -6,7 +6,7 @@ const quickQuestions = [
   "What F&B spaces are available?",
   "I'm looking for a retail or studio space",
   "What does it cost to open here?",
-  "Who else is operating in the district?",
+  "Tell me about the community & foot traffic",
   "How do I schedule a tour?",
 ]
 
@@ -42,7 +42,6 @@ export default function PhxAssistant() {
           messages: newMessages.map((m) => ({ role: m.role, content: m.content })),
         }),
       })
-
       const data = await res.json()
       const reply = data.content || "I'm having trouble connecting right now. Please try again."
       setMessages([...newMessages, { role: 'assistant', content: reply }])
@@ -63,81 +62,82 @@ export default function PhxAssistant() {
   return (
     <div style={{
       minHeight: '100vh',
-      background: '#ffffff',
+      background: '#f5f2ee',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
       padding: '40px 20px',
+      fontFamily: "'Inter', 'Helvetica Neue', Arial, sans-serif",
     }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         .chat-container { width: 100%; max-width: 700px; display: flex; flex-direction: column; }
 
-        .header { display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 2px solid #000; }
+        .header { display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 2px solid #2d2d6b; }
 
-        .district-label { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.25em; color: #888; text-transform: uppercase; margin-bottom: 10px; }
+        .district-label { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.22em; color: #2d2d6b; text-transform: uppercase; margin-bottom: 10px; }
 
-        .logo { font-family: 'Montserrat', sans-serif; font-size: 38px; font-weight: 700; color: #000; letter-spacing: -0.02em; line-height: 1; text-transform: uppercase; }
+        .logo { font-family: 'Inter', sans-serif; font-size: 36px; font-weight: 700; color: #2d2d6b; letter-spacing: -0.02em; line-height: 1; text-transform: uppercase; }
 
-        .tagline { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 400; color: #888; letter-spacing: 0.1em; margin-top: 8px; text-transform: uppercase; }
+        .tagline { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 400; color: #8a8a9a; letter-spacing: 0.1em; margin-top: 8px; text-transform: uppercase; }
 
-        .messages-area { display: flex; flex-direction: column; gap: 16px; min-height: 320px; max-height: 420px; overflow-y: auto; padding-right: 4px; scrollbar-width: thin; scrollbar-color: #ddd transparent; }
+        .messages-area { display: flex; flex-direction: column; gap: 16px; min-height: 320px; max-height: 420px; overflow-y: auto; padding-right: 4px; scrollbar-width: thin; scrollbar-color: #d8d4ce transparent; }
 
         .messages-area::-webkit-scrollbar { width: 3px; }
-        .messages-area::-webkit-scrollbar-thumb { background: #ddd; border-radius: 2px; }
+        .messages-area::-webkit-scrollbar-thumb { background: #d8d4ce; border-radius: 2px; }
 
         .message { display: flex; flex-direction: column; gap: 5px; animation: fadeUp 0.25s ease forwards; }
 
         @keyframes fadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
-        .message-label { font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
+        .message-label { font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
 
-        .message.assistant .message-label { color: #000; }
+        .message.assistant .message-label { color: #2d2d6b; }
         .message.user .message-label { color: #aaa; align-self: flex-end; }
 
-        .message-bubble { padding: 16px 20px; line-height: 1.7; }
+        .message-bubble { padding: 16px 20px; line-height: 1.7; font-family: 'Inter', sans-serif; }
 
-        .message.assistant .message-bubble { background: #f7f7f5; border-left: 3px solid #000; color: #1a1a1a; font-family: 'Source Serif 4', serif; font-size: 15px; font-weight: 300; }
+        .message.assistant .message-bubble { background: #edeae5; border-left: 3px solid #2d2d6b; color: #1a1a2e; font-size: 14px; font-weight: 400; }
 
-        .message.user .message-bubble { background: #000; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 400; align-self: flex-end; max-width: 80%; }
+        .message.user .message-bubble { background: #2d2d6b; color: #fff; font-size: 13px; font-weight: 400; align-self: flex-end; max-width: 80%; }
 
-        .typing-indicator { display: flex; gap: 5px; align-items: center; padding: 18px 20px; background: #f7f7f5; border-left: 3px solid #000; width: fit-content; }
+        .typing-indicator { display: flex; gap: 5px; align-items: center; padding: 18px 20px; background: #edeae5; border-left: 3px solid #2d2d6b; width: fit-content; }
 
-        .typing-dot { width: 5px; height: 5px; background: #000; border-radius: 50%; animation: pulse 1.4s ease infinite; }
+        .typing-dot { width: 5px; height: 5px; background: #2d2d6b; border-radius: 50%; animation: pulse 1.4s ease infinite; }
         .typing-dot:nth-child(2) { animation-delay: 0.2s; }
         .typing-dot:nth-child(3) { animation-delay: 0.4s; }
 
         @keyframes pulse { 0%, 60%, 100% { opacity: 0.2; transform: scale(1); } 30% { opacity: 1; transform: scale(1.2); } }
 
-        .input-area { margin-top: 24px; border-top: 1px solid #e0e0e0; padding-top: 20px; display: flex; gap: 10px; align-items: flex-end; }
+        .input-area { margin-top: 24px; border-top: 1px solid #d8d4ce; padding-top: 20px; display: flex; gap: 10px; align-items: flex-end; }
 
-        .chat-input { flex: 1; background: #f7f7f5; border: 1px solid #e0e0e0; padding: 14px 16px; color: #1a1a1a; font-family: 'Montserrat', sans-serif; font-size: 13px; resize: none; outline: none; transition: border-color 0.15s ease; line-height: 1.5; }
+        .chat-input { flex: 1; background: #edeae5; border: 1px solid #d8d4ce; padding: 14px 16px; color: #1a1a2e; font-family: 'Inter', sans-serif; font-size: 13px; resize: none; outline: none; transition: border-color 0.15s ease; line-height: 1.5; }
 
         .chat-input::placeholder { color: #bbb; }
-        .chat-input:focus { border-color: #000; }
+        .chat-input:focus { border-color: #2d2d6b; }
 
-        .send-btn { background: #000; border: none; color: #fff; width: 50px; height: 50px; cursor: pointer; font-size: 18px; transition: background 0.15s ease; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .send-btn { background: #2d2d6b; border: none; color: #fff; width: 50px; height: 50px; cursor: pointer; font-size: 18px; transition: background 0.15s ease; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 
-        .send-btn:hover { background: #333; }
-        .send-btn:disabled { background: #ddd; color: #aaa; cursor: not-allowed; }
+        .send-btn:hover { background: #3d3d8b; }
+        .send-btn:disabled { background: #d8d4ce; color: #aaa; cursor: not-allowed; }
 
         .quick-questions { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 7px; }
 
-        .quick-label { font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: #bbb; letter-spacing: 0.18em; text-transform: uppercase; width: 100%; margin-bottom: 2px; }
+        .quick-label { font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 600; color: #bbb; letter-spacing: 0.18em; text-transform: uppercase; width: 100%; margin-bottom: 2px; }
 
-        .quick-btn { background: transparent; border: 1px solid #ddd; color: #666; padding: 7px 12px; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; cursor: pointer; transition: all 0.15s ease; letter-spacing: 0.04em; white-space: nowrap; }
+        .quick-btn { background: transparent; border: 1px solid #c8c4be; color: #666; padding: 7px 12px; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 500; cursor: pointer; transition: all 0.15s ease; letter-spacing: 0.04em; white-space: nowrap; }
 
-        .quick-btn:hover { border-color: #000; color: #000; background: #f7f7f5; }
+        .quick-btn:hover { border-color: #2d2d6b; color: #2d2d6b; background: #edeae5; }
 
         .footer { margin-top: 16px; display: flex; justify-content: space-between; align-items: center; }
 
-        .footer-text { font-family: 'Montserrat', sans-serif; font-size: 9px; color: #bbb; letter-spacing: 0.12em; text-transform: uppercase; }
+        .footer-text { font-family: 'Inter', sans-serif; font-size: 9px; color: #bbb; letter-spacing: 0.12em; text-transform: uppercase; }
 
-        .footer-link { font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: #000; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid #000; padding-bottom: 1px; }
+        .footer-link { font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 600; color: #2d2d6b; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid #2d2d6b; padding-bottom: 1px; }
 
         .footer-link:hover { opacity: 0.6; }
       `}</style>
