@@ -2,11 +2,11 @@
 
 import { useState, useRef, useEffect } from 'react'
 
-const suggestedQuestions = [
-  "What spaces are available right now?",
-  "I need a creative office for a small team",
-  "Do you have retail or restaurant space?",
-  "What makes PHX JAX different?",
+const quickQuestions = [
+  "What F&B spaces are available?",
+  "I'm looking for a retail or studio space",
+  "What does it cost to open here?",
+  "Who else is operating in the district?",
   "How do I schedule a tour?",
 ]
 
@@ -14,12 +14,11 @@ export default function PhxAssistant() {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: "Welcome to PHX JAX — Jacksonville's Phoenix Arts & Innovation District. I'm Phx, your leasing guide. Whether you're a creative agency, startup, maker, or restaurateur, we likely have a space that fits. What brings you here today?",
+      content: "Welcome to PHX JAX — Jacksonville's Phoenix Arts & Innovation District. I'm Phx, your leasing guide. Whether you're a restaurateur, retailer, maker, or creative entrepreneur, we likely have a space that fits. What kind of operation are you looking to open?",
     },
   ])
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
-  const [showSuggestions, setShowSuggestions] = useState(true)
   const bottomRef = useRef(null)
 
   useEffect(() => {
@@ -31,7 +30,6 @@ export default function PhxAssistant() {
     if (!userMessage || loading) return
 
     setInput('')
-    setShowSuggestions(false)
     const newMessages = [...messages, { role: 'user', content: userMessage }]
     setMessages(newMessages)
     setLoading(true)
@@ -87,7 +85,7 @@ export default function PhxAssistant() {
 
         .tagline { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 400; color: #888; letter-spacing: 0.1em; margin-top: 8px; text-transform: uppercase; }
 
-        .messages-area { display: flex; flex-direction: column; gap: 16px; min-height: 320px; max-height: 500px; overflow-y: auto; padding-right: 4px; scrollbar-width: thin; scrollbar-color: #ddd transparent; }
+        .messages-area { display: flex; flex-direction: column; gap: 16px; min-height: 320px; max-height: 420px; overflow-y: auto; padding-right: 4px; scrollbar-width: thin; scrollbar-color: #ddd transparent; }
 
         .messages-area::-webkit-scrollbar { width: 3px; }
         .messages-area::-webkit-scrollbar-thumb { background: #ddd; border-radius: 2px; }
@@ -115,12 +113,6 @@ export default function PhxAssistant() {
 
         @keyframes pulse { 0%, 60%, 100% { opacity: 0.2; transform: scale(1); } 30% { opacity: 1; transform: scale(1.2); } }
 
-        .suggestions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-
-        .suggestion-btn { background: transparent; border: 1px solid #000; color: #000; padding: 8px 14px; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; cursor: pointer; transition: all 0.15s ease; letter-spacing: 0.06em; text-transform: uppercase; }
-
-        .suggestion-btn:hover { background: #000; color: #fff; }
-
         .input-area { margin-top: 24px; border-top: 1px solid #e0e0e0; padding-top: 20px; display: flex; gap: 10px; align-items: flex-end; }
 
         .chat-input { flex: 1; background: #f7f7f5; border: 1px solid #e0e0e0; padding: 14px 16px; color: #1a1a1a; font-family: 'Montserrat', sans-serif; font-size: 13px; resize: none; outline: none; transition: border-color 0.15s ease; line-height: 1.5; }
@@ -133,7 +125,15 @@ export default function PhxAssistant() {
         .send-btn:hover { background: #333; }
         .send-btn:disabled { background: #ddd; color: #aaa; cursor: not-allowed; }
 
-        .footer { margin-top: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .quick-questions { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 7px; }
+
+        .quick-label { font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: #bbb; letter-spacing: 0.18em; text-transform: uppercase; width: 100%; margin-bottom: 2px; }
+
+        .quick-btn { background: transparent; border: 1px solid #ddd; color: #666; padding: 7px 12px; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; cursor: pointer; transition: all 0.15s ease; letter-spacing: 0.04em; white-space: nowrap; }
+
+        .quick-btn:hover { border-color: #000; color: #000; background: #f7f7f5; }
+
+        .footer { margin-top: 16px; display: flex; justify-content: space-between; align-items: center; }
 
         .footer-text { font-family: 'Montserrat', sans-serif; font-size: 9px; color: #bbb; letter-spacing: 0.12em; text-transform: uppercase; }
 
@@ -172,14 +172,6 @@ export default function PhxAssistant() {
             </div>
           )}
 
-          {showSuggestions && messages.length === 1 && (
-            <div className="suggestions">
-              {suggestedQuestions.map((q, i) => (
-                <button key={i} className="suggestion-btn" onClick={() => sendMessage(q)}>{q}</button>
-              ))}
-            </div>
-          )}
-
           <div ref={bottomRef} />
         </div>
 
@@ -193,6 +185,13 @@ export default function PhxAssistant() {
             rows={1}
           />
           <button className="send-btn" onClick={() => sendMessage()} disabled={!input.trim() || loading}>→</button>
+        </div>
+
+        <div className="quick-questions">
+          <div className="quick-label">Quick Questions</div>
+          {quickQuestions.map((q, i) => (
+            <button key={i} className="quick-btn" onClick={() => sendMessage(q)}>{q}</button>
+          ))}
         </div>
 
         <div className="footer">
