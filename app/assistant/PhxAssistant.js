@@ -5,7 +5,7 @@ import { useState, useRef, useEffect } from 'react'
 const quickQuestions = [
   "What F&B spaces are available?",
   "I'm looking for a retail or studio space",
-  "What does it cost to open here?",
+  "I'm looking for co-working or office space",
   "Tell me about the community & foot traffic",
   "How do I schedule a tour?",
 ]
