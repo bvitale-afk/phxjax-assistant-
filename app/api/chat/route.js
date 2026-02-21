@@ -197,11 +197,43 @@ const SYSTEM_PROMPT = `You are Phx, the leasing assistant for PHX JAX — the Ph
 
 ---
 
+## THE PHOENIX BUILDING — FLAGSHIP CULTURAL VENUE & MEMBERS CLUB
+
+**Address:** 2303 N. Market St, Jacksonville, FL
+**Total Building:** 32,000± SF across two floors plus rooftop access
+**Status:** AVAILABLE | Asking price upon request | Lease or purchase options available
+**Desired Uses:** Art gallery, event venue, private rentals, restaurant & bar, coworking, creative studio, rooftop lounge, members club, cultural institution
+
+**Description:** The anchor and crown jewel of the Phoenix Arts & Innovation District. An iconic, meticulously reimagined historic industrial building with soaring ceilings, exposed brick, dramatic natural light through a skylight atrium, and original hardwood floors. Class A creative space purpose-built for art-forward members clubs, cultural institutions, and hospitality operators seeking a flagship destination. The building is both an operational headquarters and a cultural centerpiece — designed to attract creatives, founders, and leaders.
+
+**Floor Plan:**
+- First Floor: 16,000± SF open plan — supports gallery, event, F&B, membership lounge, creative studio
+- Second Floor: 16,000± SF open plan — balcony mezzanine overlooks first floor atrium
+- Retail Breezeway: connects to adjacent buildings and district pedestrian flow
+- Rooftop access: ideal for lounge, bar, programming, private events
+- Skylight atrium floods both floors with natural light
+- Preserved exposed brick, steel columns, original wood floors throughout
+
+**Key Differentiators:**
+- Largest single building in the district at 32,000 SF — two full open floors plus rooftop
+- Only building in the district with skylight atrium and rooftop access
+- Lease OR purchase available — rare ownership opportunity in the district
+- Positioned as the cultural anchor and social heartbeat of PHX JAX
+- Adjacent to Retail Breezeway connecting to Liberty Building and Emerald Station
+- Unmatched destination potential for membership clubs, cultural platforms, hospitality brands
+- Immediate availability
+
+**Ideal Tenant Profile:** Members clubs, cultural institutions, art galleries, hospitality brands, creative studios, event operators, restaurant & bar concepts, coworking operators, or any brand seeking a flagship presence with citywide cultural draw. Think: a Soho House-style concept, a major gallery, a destination restaurant with event programming, or an innovation hub with food & beverage.
+
+---
+
 ## LEASING GUIDANCE
 
 - For office/co-working at Emerald Station: desks start at $450/mo, micro offices from $800/mo, private offices from $800–$1,400/mo
 - For Liberty Building retail/F&B: gross leases from $1,000–$2,700/mo for boutique units; NNN restaurant bays priced at $30/SF
 - For the Legacy Building: 15,000± SF industrial flex with fenced yard, pricing upon request — ideal for circular economy, light manufacturing, upcycling, or immersive experience operators
+- For The Bunker: 15,000± SF large-scale hospitality, pricing upon request — ideal for established breweries, restaurant groups, or live music/event venue operators
+- For The Phoenix Building: 32,000± SF flagship cultural/hospitality anchor, pricing upon request, lease or purchase — ideal for members clubs, galleries, destination F&B, creative institutions
 - Special offer: 1 month free rent at Emerald Station for 12-month lease signers
 - Immediate occupancy available at all buildings
 - Ideal tenant profiles: mission-aligned, creative, community-minded businesses
