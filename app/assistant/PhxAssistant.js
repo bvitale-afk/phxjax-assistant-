@@ -19,6 +19,7 @@ export default function PhxAssistant() {
   ])
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
+  const [quickOpen, setQuickOpen] = useState(true)
   const bottomRef = useRef(null)
 
   useEffect(() => {
@@ -160,7 +161,11 @@ export default function PhxAssistant() {
 
         .quick-questions { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
 
-        .quick-label { font-size: 9px; font-weight: 600; color: #bbb; letter-spacing: 0.18em; text-transform: uppercase; width: 100%; margin-bottom: 2px; }
+        .quick-label-row { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 2px; }
+
+        .quick-label { font-size: 9px; font-weight: 600; color: #bbb; letter-spacing: 0.18em; text-transform: uppercase; }
+
+        .quick-toggle { display: none; background: none; border: none; font-size: 9px; font-weight: 600; color: #2d2d6b; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; font-family: 'Inter', sans-serif; padding: 0; }
 
         .quick-btn { background: transparent; border: 1px solid #c8c4be; color: #666; padding: 6px 11px; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 500; cursor: pointer; transition: all 0.15s ease; letter-spacing: 0.04em; white-space: nowrap; }
 
@@ -181,6 +186,7 @@ export default function PhxAssistant() {
           .chat-outer { height: auto; padding: 20px 16px 24px; }
           .messages-area { max-height: 60vh; flex: none; }
           .quick-btn { font-size: 11px; padding: 8px 12px; }
+          .quick-toggle { display: block; }
         }
       `}</style>
 
@@ -231,8 +237,13 @@ export default function PhxAssistant() {
           </div>
 
           <div className="quick-questions">
-            <div className="quick-label">Quick Questions</div>
-            {quickQuestions.map((q, i) => (
+            <div className="quick-label-row">
+              <div className="quick-label">Quick Questions</div>
+              <button className="quick-toggle" onClick={() => setQuickOpen(!quickOpen)}>
+                {quickOpen ? '▲ Hide' : '▼ Show'}
+              </button>
+            </div>
+            {quickOpen && quickQuestions.map((q, i) => (
               <button key={i} className="quick-btn" onClick={() => sendMessage(q)}>{q}</button>
             ))}
           </div>
