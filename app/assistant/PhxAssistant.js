@@ -104,6 +104,7 @@ export default function PhxAssistant() {
 
         .messages-area {
           flex: 1;
+          min-height: 0;
           overflow-y: auto;
           display: flex;
           flex-direction: column;
@@ -112,6 +113,7 @@ export default function PhxAssistant() {
           -webkit-overflow-scrolling: touch;
           scrollbar-width: thin;
           scrollbar-color: #d8d4ce transparent;
+          transition: all 0.2s ease;
         }
 
         .messages-area::-webkit-scrollbar { width: 3px; }
@@ -181,10 +183,10 @@ export default function PhxAssistant() {
 
         /* Mobile: allow scrolling on the whole page instead */
         @media (max-width: 640px) {
-          html, body { height: auto; overflow: auto; }
-          div[style*="height: 100dvh"] { height: auto !important; overflow: visible !important; }
-          .chat-outer { height: auto; padding: 20px 16px 24px; }
-          .messages-area { max-height: 60vh; flex: none; }
+          html, body { height: 100dvh; overflow: hidden; }
+          div[style*="height: 100dvh"] { height: 100dvh !important; }
+          .chat-outer { height: 100%; padding: 20px 16px 24px; }
+          .messages-area { max-height: none; flex: 1; min-height: 0; }
           .quick-btn { font-size: 11px; padding: 8px 12px; }
           .quick-toggle { display: block; }
         }
