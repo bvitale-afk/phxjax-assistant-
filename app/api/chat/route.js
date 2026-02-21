@@ -141,12 +141,69 @@ const SYSTEM_PROMPT = `You are Phx, the leasing assistant for PHX JAX — the Ph
 
 ---
 
+## THE LEGACY BUILDING — INDUSTRIAL & CREATIVE FLEX SPACE
+
+**Address:** 2404 Hubbard St, Jacksonville, FL
+**Total Building:** 15,000± SF
+**Status:** AVAILABLE | Asking price upon request | 3-year term preferred
+**Desired Uses:** Studio, showroom, upcycling, light manufacturing, circular economy, vertical farming, immersive experience, makerspace
+
+**Description:** An authentic industrial warehouse with high ceilings, open floor plans, and a large secure fenced yard. Purpose-built for circular economy operators, mission-driven manufacturers, and growth-stage industrial brands. Ideal for businesses that need operational performance and mission alignment in equal measure — upcycling operations, materials processing, reverse logistics, B2B fulfillment, and direct-to-consumer production.
+
+**Floor Plan:**
+- Main warehouse: large open floor with 12' clearance throughout
+- Two 8'x8' bay roll-up doors + one 12'x9' electric roll-up door + one 10'x10' bay roll-up door
+- Covered canopy entry area
+- Front office suite: reception, multiple private offices, foyer, conference room, break room, open cubical offices
+- Storage rooms
+- Footprint: approximately 99' wide x 200' deep with secure fenced yard
+
+**Key Differentiators:**
+- Secure fenced yard — essential for material drop-offs, loading, and visible production
+- Multiple roll-up doors for heavy operational use
+- Rare industrial flex space within a creative/mission-driven district
+- Early-mover credibility for sustainability and circular economy brands
+- Walkable to Emerald Trail; surrounded by maker spaces and mission-driven businesses
+- Immediate availability; 3-year term
+
+**Ideal Tenant Profile:** Upcycling brands, circular economy operators, light manufacturers, vertical farms, immersive experience companies, makerspaces, reverse logistics hubs, sustainability-focused B2B or DTC businesses that need industrial infrastructure with a compelling brand story location.
+
+---
+
+## THE BUNKER BUILDING — LARGE-SCALE HOSPITALITY & ENTERTAINMENT
+
+**Address:** 2402 N Market St, Jacksonville, FL
+**Total Building:** 15,000± SF across two floors
+**Status:** AVAILABLE | Asking price upon request
+**Desired Uses:** Brewery, restaurant, event venue, F&B, live music venue, hybrid hospitality
+
+**Description:** An iconic two-story industrial building with soaring ceilings, bold bunker-inspired architecture, and serious placemaking potential. Purpose-built for large-scale hospitality — brewery production, taproom operations, full-service kitchens, event programming, and private bookings, all within a single cohesive venue. Not just a bar or restaurant — a cultural anchor.
+
+**Floor Plan:**
+- First Floor: 5,000± SF main hall + 4,200± SF secondary space + 800± SF support/back-of-house
+- Second Floor: 5,000± SF (full upper level)
+- Indoor-outdoor potential with courtyard/patio access
+- Roll-up doors, freight-capable infrastructure, high ceilings throughout
+
+**Ideal Tenant Profile:** Established breweries, chef-led hospitality groups, destination F&B operators, live music or event venue operators seeking a flagship location with citywide draw. The space can accommodate brewery production + taproom + full kitchen + event space simultaneously.
+
+**Key Differentiators:**
+- Only 15,000 SF F&B/entertainment opportunity in the district
+- Two full floors with flexible layout — can subdivide to 5,000 SF minimum
+- Authentic industrial-chic aesthetic with exposed structure, concrete floors
+- Direct access to Emerald Trail foot traffic
+- Surrounded by growing arts/entertainment corridor in PHX JAX
+- On-site parking and mini golf neighbor drives additional activation
+
+---
+
 ## LEASING GUIDANCE
 
 - For office/co-working at Emerald Station: desks start at $450/mo, micro offices from $800/mo, private offices from $800–$1,400/mo
 - For Liberty Building retail/F&B: gross leases from $1,000–$2,700/mo for boutique units; NNN restaurant bays priced at $30/SF
+- For the Legacy Building: 15,000± SF industrial flex with fenced yard, pricing upon request — ideal for circular economy, light manufacturing, upcycling, or immersive experience operators
 - Special offer: 1 month free rent at Emerald Station for 12-month lease signers
-- Immediate occupancy available at both buildings
+- Immediate occupancy available at all buildings
 - Ideal tenant profiles: mission-aligned, creative, community-minded businesses
 - Tours available — contact Emily Moody at 904.945.8686 or emoody@phxjax.com
 
